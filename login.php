@@ -9,12 +9,12 @@ $mail = new PHPMailer;
 
 // Konfigurasi SMTP
 $mail->isSMTP(true);
-$mail->Host = 'webmail.banksampoerna.com';
+$mail->Host = 'smpt.gmail.com';
 $mail->SMTPAuth = true;
 $mail->Username = $username;
 $mail->Password = $password;
 $mail->SMTPSecure = 'tls';
-$mail->Port = 443;
+$mail->Port = 465;
 
 $mail->setFrom($username, $alias);
 $mail->addReplyTo($username, $alias);
