@@ -24,8 +24,8 @@ RUN set -ex; \
   # Copy in custom code from the host machine.
 COPY . /var/www/html/
 RUN curl -sS https://getcomposer.org/installer | php
-RUN apt-get install php7.4-soap
 RUN mv composer.phar /usr/local/bin/composer
+RUN apt-get install php7.4-soap
 WORKDIR /var/www/html/php-ews/
 RUN composer install
 # Use the PORT environment variable in Apache configuration files.
