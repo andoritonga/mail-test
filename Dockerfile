@@ -23,9 +23,9 @@ RUN set -ex; \
   } > "$PHP_INI_DIR/conf.d/cloud-run.ini"
   # Copy in custom code from the host machine.
 COPY . /var/www/html/
-WORKDIR /var/www/html/php-ews/
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+WORKDIR /var/www/html/php-ews/
 RUN composer install
 # Use the PORT environment variable in Apache configuration files.
 # https://cloud.google.com/run/docs/reference/container-contract#port
