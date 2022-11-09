@@ -24,6 +24,8 @@ RUN set -ex; \
   # Copy in custom code from the host machine.
 COPY . /var/www/html/
 WORKDIR /var/www/html/php-ews/
+RUN php composer-setup.php --install-dir=bin --filename=composer
+RUN php bin/composer
 RUN composer install
 # Use the PORT environment variable in Apache configuration files.
 # https://cloud.google.com/run/docs/reference/container-contract#port
