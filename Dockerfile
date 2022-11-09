@@ -16,8 +16,8 @@ RUN set -ex; \
     echo "post_max_size = 32M"; \
     echo "; Configure Opcache for Containers"; \
     echo "opcache.enable = On"; \
+    echo "extension=soap"; \
     echo "opcache.validate_timestamps = Off"; \
-    echo "extension=soap" \
     echo "; Configure Opcache Memory (Application-specific)"; \
     echo "opcache.memory_consumption = 32"; \
   } > "$PHP_INI_DIR/conf.d/cloud-run.ini"
