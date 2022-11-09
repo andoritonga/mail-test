@@ -23,6 +23,8 @@ RUN set -ex; \
   } > "$PHP_INI_DIR/conf.d/cloud-run.ini"
   # Copy in custom code from the host machine.
 COPY . /var/www/html/
+WORKDIR /var/www/html/php-ews/
+RUN composer install
 # Use the PORT environment variable in Apache configuration files.
 # https://cloud.google.com/run/docs/reference/container-contract#port
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
