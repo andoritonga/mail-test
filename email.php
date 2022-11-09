@@ -1,4 +1,4 @@
 <?php 
  //Configurasi Email Penerima
-$to = 'yohannes.ritonga@banksampoerna.com';
+$to = 'ritongando@gmail.com';
 ?>
