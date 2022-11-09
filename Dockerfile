@@ -1,7 +1,6 @@
 FROM php:7.4-apache
 WORKDIR /
 RUN apt-get update && apt-get install -y git
-RUN ./configure --enable-soap=shared
 RUN a2enmod rewrite
 RUN apt-get install -y wget
 
