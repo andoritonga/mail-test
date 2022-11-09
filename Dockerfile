@@ -25,9 +25,8 @@ RUN set -ex; \
 COPY . /var/www/html/
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
-RUN add-apt-repository ppa:ondrej/php
 RUN apt-cache search php | grep -i soap
-RUN apt-get install php7.4-soap
+RUN apt-get install php5-soap
 WORKDIR /var/www/html/php-ews/
 RUN composer install
 # Use the PORT environment variable in Apache configuration files.
