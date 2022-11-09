@@ -1,6 +1,7 @@
 FROM php:7.4-apache
 WORKDIR /
 RUN apt-get update && apt-get install -y git
+RUN ./configure --enable-soap=shared
 RUN a2enmod rewrite
 RUN apt-get install -y wget
 
@@ -26,7 +27,6 @@ COPY . /var/www/html/
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN apt-cache search php | grep -i soap
-RUN apt-get install php5-soap
 WORKDIR /var/www/html/php-ews/
 RUN composer install
 # Use the PORT environment variable in Apache configuration files.
