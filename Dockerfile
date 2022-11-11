@@ -22,12 +22,11 @@ RUN set -ex; \
     echo "extension=soap"; \
   } > "$PHP_INI_DIR/conf.d/cloud-run.ini"
   # Copy in custom code from the host machine.
-RUN php -i | grep -i soap
-RUN apt-get install -y php7.4-soap
 COPY . /var/www/html/
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN apt-cache search php | grep -i soap
+RUN apt-get install -y php7.4-soap
 WORKDIR /var/www/html/php-ews/
 RUN composer install
 # Use the PORT environment variable in Apache configuration files.
