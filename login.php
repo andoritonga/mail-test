@@ -1,7 +1,7 @@
 <?php
 $nama= $_POST['nama'];
 $pesan= $_POST['pesan'];
-include 'email.php';
+$to= $_POST['to'];
 
 // //Import PHPMailer classes into the global namespace
 // //These must be at the top of your script, not inside a function
@@ -69,8 +69,8 @@ $change_key = 'CQAAABYAAAAr1MfeoTJdQ7jgaw/bSgljAABugzYP';
 
 // Set connection information.
 $host = 'webmail.banksampoerna.com';
-$username = 'yohannes.ritonga@banksampoerna.com';
-$password = 'November11';
+$username = 'yohannes.ritonga@banksampoerna.com'; // Masukkan alamat email anda
+$password = 'November11'; // Masukkan akun email anda Password anda
 $version = Client::VERSION_2010;
 
 $client = new Client($host, $username, $password, $version);

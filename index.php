@@ -6,8 +6,10 @@
 				<input class="input" name="nama" value="">
 				<br>
 				Pesan:<br>
-				<input class="input" name="pesan" value="">
+				<textarea name="pesan" rows="5" cols="40"></textarea>
 				<br><br>
+				Email Tujuan:<br>
+				<input class="input" name="to" value="">
 				<input type="submit" name="login" value="Submit" >
 			</form> 
 	</body>

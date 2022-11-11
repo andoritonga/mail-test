@@ -1,0 +1,18 @@
+//dockerfile that enable soap?
+
+
+RUN apt-get update &amp;&amp; \
+    apt-get install -y libxml2-dev
+
+
+RUN docker-php-ext-install soap
+
+
+
+RUN apt-get update &amp;&amp; \
+    apt-get install -y libxml2-dev
+
+
+RUN docker-php-ext-install soap
+
+
