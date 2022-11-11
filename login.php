@@ -140,7 +140,9 @@ foreach ($response_messages as $response_message) {
     }
 
     fwrite(STDOUT, "Message sent successfully.\n");
-    echo "Message sent successfully.\n";
+    echo '<script language="javascript">';
+    echo 'alert("message successfully sent")';
+    echo '</script>';
 }
 
 ?>
