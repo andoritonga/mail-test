@@ -5,6 +5,8 @@ RUN a2enmod rewrite
 RUN apt-get install -y wget
 RUN docker-php-ext-install -j "$(nproc)" opcache
 RUN docker-php-ext-install pdo_mysql mysqli
+RUN apt-get update &amp;&amp; \
+    apt-get install -y libxml2-dev
 RUN docker-php-ext-install soap
 
 RUN set -ex; \
