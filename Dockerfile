@@ -5,6 +5,7 @@ RUN a2enmod rewrite
 RUN apt-get install -y wget
 RUN docker-php-ext-install -j "$(nproc)" opcache
 RUN docker-php-ext-install pdo_mysql mysqli
+RUN docker-php-ext-install soap
 
 RUN set -ex; \
   { \
@@ -22,9 +23,6 @@ RUN set -ex; \
     echo "extension=soap"; \
   } > "$PHP_INI_DIR/conf.d/cloud-run.ini"
   # Copy in custom code from the host machine.
-RUN yum --enablerepo=webtatic install php-soap
-RUN rpm --import http://repo.webtatic.com/yum/RPM-GPG-KEY-webtatic-andy
-RUN yum --enablerepo=webtatic install  webtatic-release
 COPY . /var/www/html/
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
