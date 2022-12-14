@@ -70,7 +70,7 @@ $change_key = 'CQAAABYAAAAr1MfeoTJdQ7jgaw/bSgljAABugzYP';
 // Set connection information.
 $host = 'webmail.banksampoerna.com';
 $username = 'yohannes.ritonga@banksampoerna.com'; // Masukkan alamat email anda
-$password = 'November11'; // Masukkan akun email anda Password anda
+$password = 'December12'; // Masukkan akun email anda Password anda
 $version = Client::VERSION_2010;
 
 $client = new Client($host, $username, $password, $version);
